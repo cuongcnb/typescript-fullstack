@@ -20,5 +20,5 @@ Frond-end
 1. Mở code bằng Visual Studio Code
 2. Chạy `npm install`
 3. Chạy `tsc --watch --sourceMap` và giữ console này. Lệnh này sẽ tự động compile các file ts thành file js và tạo source map, giúp debug trên typescript
-4. Chạy debugger của Visual Studio Code
+4. Chạy `npm start`
 5. Mở http://localhost:3000 trên Chrome
