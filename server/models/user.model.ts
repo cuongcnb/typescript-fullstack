@@ -1,15 +1,15 @@
 import * as mongoose from 'mongoose';
 
 export interface IUser extends mongoose.Document {
-    id?: string;
+    _id: string;
     name: string;
     gender: string;
     phone: string;
-    created_date: Date;
+    created_date?: Date;
 }
 
 export const UserSchema = new mongoose.Schema({
-    id: {
+    _id: {
         type: String
     },
     name: {
@@ -28,5 +28,5 @@ export const UserSchema = new mongoose.Schema({
     }
 });
 
-const User = mongoose.model('User', UserSchema);
+const User = mongoose.model('user', UserSchema);
 export default User;

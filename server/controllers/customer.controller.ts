@@ -24,4 +24,17 @@ export class CustomerController {
     public async findCustomer(req: express.Request, res: express.Response): Promise<any[]> {
         return await User.find({}).exec();
     }
+
+    @Post('/create')
+    public async createCustomer(req: express.Request, res: express.Response): Promise<any[]> {
+
+        let user = {
+            _id: '2',
+            name: 'Cuong Nguyen',
+            gender: 'male',
+            phone: '01656113565'
+        } as IUser;
+
+        return await this.userService.createUser(user);
+    }
 }
