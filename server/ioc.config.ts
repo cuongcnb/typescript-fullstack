@@ -7,6 +7,7 @@ import TYPES from './constants/types';
 import { HomeController } from './controllers/home.controller';
 import { CustomerController } from './controllers/customer.controller';
 import { IUserService, UserService } from './services/user.service';
+import { AuthController } from './controllers/auth.controller';
 
 let container = new Container();
 
@@ -26,6 +27,7 @@ container.bind<IUserService>(TYPES.IUserService).to(UserService).inSingletonScop
 
 // controllers binding
 container.bind<interfaces.Controller>(TYPE.Controller).to(HomeController).whenTargetNamed(TAGS.HomeController);
+container.bind<interfaces.Controller>(TYPE.Controller).to(AuthController).whenTargetNamed(TAGS.AuthController);
 container.bind<interfaces.Controller>(TYPE.Controller).to(CustomerController).whenTargetNamed(TAGS.CustomerController);
 
 export default container;

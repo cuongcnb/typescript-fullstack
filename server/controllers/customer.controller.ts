@@ -7,7 +7,7 @@ import { IUserService } from '../services/user.service';
 import { IUser, default as User } from '../models/user.model';
 
 @injectable()
-@Controller('/customers')
+@Controller('/api/customers')
 export class CustomerController {
 
     constructor(

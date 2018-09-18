@@ -1,6 +1,7 @@
 const TAGS = {
     HomeController: 'HomeController',
-    CustomerController: 'CustomerController'
+    CustomerController: 'CustomerController',
+    AuthController: 'AuthController'
 };
 
 export default TAGS;

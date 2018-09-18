@@ -1,29 +1,6 @@
-const publicKey = `-----BEGIN CERTIFICATE-----
-MIIDAzCCAeugAwIBAgIJPc04dYyzLKluMA0GCSqGSIb3DQEBCwUAMB8xHTAbBgNV
-BAMTFGdpYW5nbm4uYXUuYXV0aDAuY29tMB4XDTE3MDYyNzEyMjQwNloXDTMxMDMw
-NjEyMjQwNlowHzEdMBsGA1UEAxMUZ2lhbmdubi5hdS5hdXRoMC5jb20wggEiMA0G
-CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCXgcNncVGz3oSJAChA1HE880wfvHvs
-eCYaHvU+RcHZemtnIiIQJl/+UEciwq2nWNugJNCfJPx7jFUQHmXmbnZNgULtUMvU
-TKZa6ypL3eNEebA+nNb6ykCzn/0l8+5b1jZNQzjQ/mXTk2Cxi1eq8DeLALksc2q7
-+r6OQqQHteiZx08EqokPRhXvyD4ysHqfIRYnenHL42s4WuWQQvwLNPsrWD8FyQSW
-Kvt0LD/Ff2MWrwuhOVDSeUURnZDJAdnWsjfS63CC57kSAc/DGorASaBNKsIKlxQR
-ykGul1BJKHFTjlfi/n3oqbFOeO+8bffzZ1gZkkb9Pr5rQklwscjiX3kpAgMBAAGj
-QjBAMA8GA1UdEwEB/wQFMAMBAf8wHQYDVR0OBBYEFGZIYyDNdcru9k6B4YCUQCbH
-vmDfMA4GA1UdDwEB/wQEAwIChDANBgkqhkiG9w0BAQsFAAOCAQEANnkD05WF1e+b
-DT1AViG9PD9nPcWTUTZRTOADHDq/gb99nqPkjZvVxVHKJiINI+ON+4xP5Zp7ohvh
-eTrRCU9yAVIAKW/qsgxyyUbVeTIZcZJecvXXADau2reXgUCkKiYTtmEo/yW+Wx05
-ahTC+0cP4NgQvzlUVPG9giHUvrVZxHwAP82UqQuGQJk7JqjnSQ5GTuuLEJ9dU3Bm
-sTz31eC48cwHol/O3eXYicoV9iQkNYujzsH6spIdjUK8ltk/LLg6MiKFT3lGEmPj
-gKa0oHFBk9Gd6XtXfYrMUta/WGpFUCJ8D8NdB+//PfaRNnvijhMHnp4ZpIaYQavm
-k4RTul74cQ==
------END CERTIFICATE-----
-`;
-
 module.exports = {
     port: '3000',
-    oauth: {
-        publicKey: publicKey
-    },
+    jwtSecret: 'A10N-ymeHqcg5DyxggjzX',
     database: {
         url: 'mongodb://localhost/test'
     }
