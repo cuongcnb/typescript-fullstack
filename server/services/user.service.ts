@@ -3,6 +3,7 @@ import {IUser, default as User} from '../models/user.model';
 
 export interface IUserService {
     getUsers(): Promise<IUser[]>;
+    findById(id: string): Promise<IUser>;
     createUser(user: IUser): Promise<any>;
 }
 
@@ -10,6 +11,10 @@ export interface IUserService {
 export class UserService implements IUserService {
     
     constructor() {
+    }
+
+    public async findById(id: string) {
+        return await User.findOne({_id: id});
     }
 
     public getUsers(): Promise<IUser[]> {

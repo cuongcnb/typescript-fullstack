@@ -9,6 +9,7 @@ import * as http from 'http';
 import * as mongoose from 'mongoose';
 import container from './ioc.config';
 import { verifyJWT } from './middlewares/auth';
+import { AuthProvider } from './core/auth/auth-provider';
 
 mongoose.connect(config.get('database.url'), (err: any) => {
     if (err) {
@@ -18,7 +19,7 @@ mongoose.connect(config.get('database.url'), (err: any) => {
     }
 });
 
-let server = new InversifyExpressServer(container);
+let server = new InversifyExpressServer(container, null, null, null, AuthProvider);
 server.setConfig((app) => {
 
   app.use(cors());

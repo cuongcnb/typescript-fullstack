@@ -1,13 +1,19 @@
 import 'reflect-metadata';
-import { interfaces, Controller, InversifyExpressServer, TYPE } from 'inversify-express-utils';
 import { Container } from 'inversify';
 import { Logger, LoggerInstance, LoggerOptions, transports } from 'winston';
 import TAGS from './constants/tags';
 import TYPES from './constants/types';
-import { HomeController } from './controllers/home.controller';
-import { CustomerController } from './controllers/customer.controller';
 import { IUserService, UserService } from './services/user.service';
-import { AuthController } from './controllers/auth.controller';
+import { HistoryService, IHistoryService } from './services/history.service';
+import { BigDataService, IBigDataService } from './services/bigdata.service';
+
+// declare metadata by @controller annotation
+import './controllers/auth.controller';
+import './controllers/bigdata.controller';
+import './controllers/customer.controller';
+import './controllers/history.controller';
+import './controllers/home.controller';
+import './controllers/user.controller';
 
 let container = new Container();
 
@@ -23,11 +29,7 @@ container.bind<LoggerInstance>(TYPES.LoggerInstance).toConstantValue(logger);
 // services binding
 
 container.bind<IUserService>(TYPES.IUserService).to(UserService).inSingletonScope();
-
-
-// controllers binding
-container.bind<interfaces.Controller>(TYPE.Controller).to(HomeController).whenTargetNamed(TAGS.HomeController);
-container.bind<interfaces.Controller>(TYPE.Controller).to(AuthController).whenTargetNamed(TAGS.AuthController);
-container.bind<interfaces.Controller>(TYPE.Controller).to(CustomerController).whenTargetNamed(TAGS.CustomerController);
+container.bind<IHistoryService>(TYPES.IHistoryService).to(HistoryService).inSingletonScope();
+container.bind<IBigDataService>(TYPES.IBigDataService).to(BigDataService).inSingletonScope();
 
 export default container;
